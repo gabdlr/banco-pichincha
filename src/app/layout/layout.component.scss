@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  height: 80px;
+  background-color: white;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 80px);
+  background: var(--background-gray);
+}

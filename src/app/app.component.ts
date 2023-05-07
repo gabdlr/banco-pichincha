@@ -1,13 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
 
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [CommonModule, RouterOutlet],
+  imports: [LayoutComponent],
 })
 export class AppComponent {
   title = 'banco-pichincha';
