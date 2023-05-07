@@ -10,6 +10,9 @@ bootstrapApplication(AppComponent, {
       {
         path: '',
         component: ProductosFinancierosComponent,
+        children: [
+          { path: '', component: ListadoProductosFinancierosComponent },
+        ],
       },
     ]),
   ],

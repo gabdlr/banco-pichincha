@@ -1,0 +1,28 @@
+$yellow: #f9de4b;
+$gray: #f0f2f7;
+
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  height: 50px;
+  width: 90px;
+}
+button {
+  &.yellow {
+    background: $yellow;
+    &:is(:disabled) {
+      background-color: lighten($yellow, 10);
+    }
+  }
+}
+button {
+  &.gray {
+    background: $gray;
+    &:is(:disabled) {
+      background-color: lighten($gray, 90);
+    }
+  }
+}
