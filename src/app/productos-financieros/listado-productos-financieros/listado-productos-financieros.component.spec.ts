@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListadoProductosFinancierosComponent } from './listado-productos-financieros.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ListadoProductosFinancierosComponent', () => {
   let component: ListadoProductosFinancierosComponent;
@@ -8,9 +8,9 @@ describe('ListadoProductosFinancierosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ ListadoProductosFinancierosComponent ]
-    })
-    .compileComponents();
+      imports: [ListadoProductosFinancierosComponent],
+      providers: [provideHttpClient()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ListadoProductosFinancierosComponent);
     component = fixture.componentInstance;
