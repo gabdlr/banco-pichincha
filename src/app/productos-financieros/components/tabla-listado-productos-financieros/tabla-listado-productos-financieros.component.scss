@@ -75,4 +75,7 @@ tr {
 .v-dots {
   color: #bfc1c5;
   font-variation-settings: 'wght' 800;
+  &:hover {
+    cursor: pointer;
+  }
 }
