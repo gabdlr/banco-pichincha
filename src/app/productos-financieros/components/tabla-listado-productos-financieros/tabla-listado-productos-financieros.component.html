@@ -34,7 +34,11 @@
           <td>{{producto.description}}</td>
           <td>{{producto.dateRelease|date:'d/M/yy'}}</td>
           <td>{{producto.dateRevision|date:'d/M/yy'}}</td>
-          <td></td>
+          <td>
+            <span appMenuFlotante [data]="{id:producto.id}" role="button" class="material-symbols-outlined v-dots">
+            more_vert
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>

@@ -5,6 +5,7 @@ import { SearchListadoProductosFinancierosPipe } from '../../pipes/search-listad
 import { ProductoFinanciero } from '../../models/ProductoFinanciero';
 import { ProductoFinancieroImagenListadoComponent } from '../producto-financiero-imagen-listado/producto-financiero-imagen-listado.component';
 import { FooterListadoProductosFinancierosComponent } from '../footer-listado-productos-financieros/footer-listado-productos-financieros.component';
+import { MenuFlotanteDirective } from '../../directives/menu-flotante.directive';
 
 @Component({
   selector: 'app-tabla-listado-productos-financieros',
@@ -16,6 +17,7 @@ import { FooterListadoProductosFinancierosComponent } from '../footer-listado-pr
     SearchListadoProductosFinancierosPipe,
     ProductoFinancieroImagenListadoComponent,
     FooterListadoProductosFinancierosComponent,
+    MenuFlotanteDirective,
   ],
 })
 export class TablaListadoProductosFinancierosComponent {
