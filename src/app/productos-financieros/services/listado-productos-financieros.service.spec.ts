@@ -1,4 +1,4 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { ListadoProductosFinancierosService } from './listado-productos-financieros.service';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import {
@@ -35,7 +35,7 @@ describe('ListadoProductosFinancierosService', () => {
     ['updateSearchString', 'setCurrentResultLength']
   );
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       providers: [
         provideHttpClient(),
@@ -49,7 +49,7 @@ describe('ListadoProductosFinancierosService', () => {
     service = TestBed.inject(ListadoProductosFinancierosService);
     client = TestBed.inject(HttpClient);
     controller = TestBed.inject(HttpTestingController);
-  }));
+  });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
@@ -113,6 +113,19 @@ describe('ListadoProductosFinancierosService', () => {
       status: 500,
       statusText: 'Internal Server Error',
     });
+  });
+
+  it('should return new productos financieros array on refetch', (done: DoneFn) => {
+    service = new ListadoProductosFinancierosService(client);
+    service.refetchListado();
+    service.listadoProductosFiancieros$.subscribe((value) => {
+      expect(value).toBeInstanceOf(Array<ProductoFinanciero>);
+      done();
+    });
+    const req = controller.expectOne(
+      'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products/'
+    );
+    req.flush(responsePlaceholder);
   });
   afterEach(() => {
     controller.verify();

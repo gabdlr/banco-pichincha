@@ -7,6 +7,12 @@ header {
 
 main {
   display: flex;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   background: var(--background-gray);
+}
+
+img {
+  &:hover {
+    cursor: pointer;
+  }
 }

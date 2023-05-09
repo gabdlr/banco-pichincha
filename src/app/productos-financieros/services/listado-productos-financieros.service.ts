@@ -1,15 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  Subject,
-  catchError,
-  map,
-  of,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap,
-} from 'rxjs';
+import { Subject, catchError, map, of, startWith, switchMap, tap } from 'rxjs';
 import { ProductoFinancieroDto } from '../models/DTO/ProductoFinancieroDTO';
 import { ProductoFinanciero } from '../models/ProductoFinanciero';
 
@@ -48,7 +39,6 @@ export class ListadoProductosFinancierosService {
           }
         );
       }),
-      shareReplay(),
       catchError(() => of([]))
     );
     this.searchString = new Subject<string>();
@@ -61,5 +51,9 @@ export class ListadoProductosFinancierosService {
 
   setCurrentResultLength(length: number) {
     this.currentResultsLength.next(length);
+  }
+
+  refetchListado() {
+    this.listadoProductosFiancieros.next([]);
   }
 }

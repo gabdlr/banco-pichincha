@@ -3,10 +3,9 @@
   border-radius: 5px;
   border: 1px #717173 solid;
   height: 70px;
-  position: fixed;
   right: 140px;
-  top: 300px;
-  z-index: 5;
+  position: absolute;
+  z-index: 999;
 }
 
 .floating-menu {

@@ -35,7 +35,7 @@
           <td>{{producto.dateRelease|date:'d/M/yy'}}</td>
           <td>{{producto.dateRevision|date:'d/M/yy'}}</td>
           <td>
-            <span appMenuFlotante [data]="{id:producto.id}" role="button" class="material-symbols-outlined v-dots">
+            <span appMenuFlotante [data]="producto" role="button" class="material-symbols-outlined v-dots">
             more_vert
             </span>
           </td>

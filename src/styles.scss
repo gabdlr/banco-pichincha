@@ -359,7 +359,8 @@ template {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
-input {
+input,
+input[type='date'] {
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 0.25rem;
@@ -369,7 +370,13 @@ input {
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.375rem 0.75rem;
-  width: 100%;
+  width: 220px;
+  &.ng-invalid.ng-touched {
+    border: 1px solid #f51111;
+  }
+  &:is(:disabled) {
+    background-color: #f6f6f6;
+  }
 }
 
 select {

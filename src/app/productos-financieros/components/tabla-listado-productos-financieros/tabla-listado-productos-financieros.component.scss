@@ -30,6 +30,7 @@ table {
   thead,
   tbody {
     display: flex;
+    flex-direction: column;
   }
 }
 
@@ -71,10 +72,12 @@ tr {
   margin-left: 5px;
   vertical-align: bottom;
 }
-
+span .v-dots {
+  position: relative;
+}
 .v-dots {
   color: #bfc1c5;
-  font-variation-settings: 'wght' 800;
+  font-variation-settings: 'wght' 700;
   &:hover {
     cursor: pointer;
   }

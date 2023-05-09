@@ -1,7 +1,9 @@
 import { MenuFlotanteDirective } from './menu-flotante.directive';
 import { ComponentRef, ViewContainerRef } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MenuFlotanteListadoProductosFinancierosComponent } from '../components/menu-flotante-listado-productos-financieros/menu-flotante-listado-productos-financieros.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 describe('MenuFlotanteDirective', () => {
   let viewContainerRef: ViewContainerRef;
   let fixture: ComponentFixture<MenuFlotanteListadoProductosFinancierosComponent>;
@@ -16,6 +18,8 @@ describe('MenuFlotanteDirective', () => {
     await TestBed.configureTestingModule({
       imports: [MenuFlotanteListadoProductosFinancierosComponent],
       providers: [
+        provideRouter([]),
+        provideHttpClient(),
         {
           provide: ViewContainerRef,
           useValue: listadoProductosFinancierosServiceSpy,
@@ -64,4 +68,18 @@ describe('MenuFlotanteDirective', () => {
     directive.unloadComponent();
     expect(directiveSpy).toHaveBeenCalled();
   });
+
+  it('should destroy component when document clicked and is open', waitForAsync(() => {
+    const directive = new MenuFlotanteDirective(viewContainerRef);
+    const directiveSpy = spyOn(directive, 'unloadComponent');
+    const target = document.createElement('span');
+    directive.elementRef = { nativeElement: {} };
+    document.getElementById = jasmine
+      .createSpy('HTML Element')
+      .and.returnValue(target);
+    document.querySelector('span')!.innerText = 'not_more_vert';
+    document.body.click();
+    directive.destroy(document.querySelector('span') as HTMLElement);
+    expect(directiveSpy).toHaveBeenCalled();
+  }));
 });
