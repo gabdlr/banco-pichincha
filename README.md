@@ -64,7 +64,8 @@ Como: Evaluador
 Requiero: que la vista de la tabla de información de productos financieros se implemente según el siguiente diseño:
 
 - Implementar la tabla de información de los productos financieros según el siguiente diseño.
-  ![diseño tabla](https://storage.googleapis.com/utility-bucket-392305/Imagen1.jpg)
+
+![diseño tabla](https://storage.googleapis.com/utility-bucket-392305/Imagen1.jpg)
 
 Dado: que se desea evaluar el nivel de programación del aspirante
 
@@ -109,7 +110,8 @@ Como: Evaluador
 Requiero: que la vista del formulario de registro/edición de un producto financiero se implemente según el siguiente diseño:
 
 - Implementar el formulario de registro/edición de un producto financiero según el siguiente diseño:
-  ![diseño formulario registro](https://storage.googleapis.com/utility-bucket-392305/Imagen4.png)
+
+![diseño formulario registro](https://storage.googleapis.com/utility-bucket-392305/Imagen4.png)
 
 Dado: que se desea evaluar el nivel de programación del aspirante
 
@@ -118,7 +120,8 @@ Como: Evaluador
 Requiero: que se implemente la funcionalidad donde el input correspondiente a la fecha de revisión se deberá mantener inhabilitado y se deberá llenar automáticamente siguiente la regla: “La Fecha de Revisión será un año exacto posterior a la Fecha de Liberación”
 
 - El input correspondiente a la fecha de revisión se deberá mantener inhabilitado y se deberá llenar automáticamente siguiente la regla: “La Fecha de Revisión será un año exacto posterior a la Fecha de Liberación”
-  ![diseño fecha revision](https://storage.googleapis.com/utility-bucket-392305/Imagen5.jpg)
+
+![diseño fecha revision](https://storage.googleapis.com/utility-bucket-392305/Imagen5.jpg)
 
 Dado: que se desea evaluar el nivel de programación del aspirante
 
