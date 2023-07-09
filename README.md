@@ -82,6 +82,7 @@ Como: Evaluador
 Requiero: que se implemente la funcionalidad de conteo total de elementos que obtiene desde el servicio.
 
 Mostrar el total de elementos que obtiene desde el servicio.
+
 ![diseño total elementos](https://storage.googleapis.com/utility-bucket-392305/Imagen2.png)
 
 Dado: que se desea evaluar el grado de funcionalidad del ejercicio
@@ -91,6 +92,7 @@ Como: Evaluador
 Requiero: que se implemente un botón de “Agregar” para navegar al formulario de registro.
 
 Implementar el botón de “Agregar” para navegar al formulario de registro.
+
 ![!diseño botón agregar](https://storage.googleapis.com/utility-bucket-392305/Imagen3.png)
 
 Dado: que se desea evaluar el grado de funcionalidad del ejercicio
@@ -130,6 +132,7 @@ Como: Evaluador
 Requiero: que se implemente la funcionalidad donde el botón de Enviar deberá mantenerse desactivado mientras el formulario contenga errores.
 
 El botón de Enviar deberá mantenerse desactivado mientras el formulario contenga
+
 ![diseño botón desactivado](https://storage.googleapis.com/utility-bucket-392305/Imagen6.png)
 
 Dado: que se desea evaluar el nivel de maquetación del aspirante
@@ -149,6 +152,7 @@ Como: Evaluador
 Requiero: que al momento de Editar un producto este no podrá cambiar de ID por lo cual deberá mantenerse deshabilitado.
 
 Al momento de Editar un producto este no podrá cambiar de ID por lo cual deberá mantenerse deshabilitado.
+
 ![diseño campo deshabilitado](https://storage.googleapis.com/utility-bucket-392305/Imagen9.png)
 
 **Validaciones**
