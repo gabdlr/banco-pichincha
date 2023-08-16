@@ -13,12 +13,14 @@ export class UniqueIdValidator implements AsyncValidator {
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     return this.httpClient
-      .get<boolean>(
-        'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products/verification',
-        { params: { id: control.value } }
+      .get<{ data: boolean }>(
+        'https://banco-pichincha-be-production.up.railway.app/bp/products/verification',
+        {
+          params: { id: control.value },
+        }
       )
       .pipe(
-        map((existeId) => (existeId ? { existeId: true } : null)),
+        map((existeId) => (existeId.data ? { existeId: true } : null)),
         catchError(() => of(null))
       );
   }

@@ -18,7 +18,7 @@ export class ProductoFinancieroService {
   createProductoFinanciero(productoFinancieroDTO: ProductoFinancieroDto) {
     this.httpClient
       .post<ProductoFinancieroDto>(
-        'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products',
+        'https://banco-pichincha-be-production.up.railway.app/bp/products/',
         productoFinancieroDTO
       )
       .pipe(
@@ -34,7 +34,7 @@ export class ProductoFinancieroService {
   updateProductoFinanciero(productoFinancieroDTO: ProductoFinancieroDto) {
     this.httpClient
       .put<ProductoFinancieroDto>(
-        'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products',
+        'https://banco-pichincha-be-production.up.railway.app/bp/products/',
         productoFinancieroDTO
       )
       .pipe(
@@ -50,7 +50,7 @@ export class ProductoFinancieroService {
   deleteProductoFinanciero(id: string) {
     this.httpClient
       .delete(
-        'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products',
+        'https://banco-pichincha-be-production.up.railway.app/bp/products/',
         { params: { id } }
       )
       .pipe(

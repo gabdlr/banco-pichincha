@@ -18,20 +18,20 @@ export class ListadoProductosFinancierosService {
   constructor(private httpClient: HttpClient) {
     this.listadoProductosFiancieros = new Subject<ProductoFinanciero[]>();
     this.currentResultsLength = new Subject<number>();
-    this.getListadoProductosFinancieros$ = this.httpClient.get<
-      ProductoFinancieroDto[]
-    >(
-      'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products/'
-    );
+    this.getListadoProductosFinancieros$ = this.httpClient.get<{
+      data: ProductoFinancieroDto[];
+    }>('https://banco-pichincha-be-production.up.railway.app/bp/products/');
     this.currentResultLength$ = this.currentResultsLength.pipe(startWith(0));
     this.listadoProductosFiancieros$ = this.listadoProductosFiancieros.pipe(
       startWith(true),
       switchMap(() => this.getListadoProductosFinancieros$),
       tap((listadoProductosFiancierosDTO) =>
-        this.currentResultsLength.next(listadoProductosFiancierosDTO.length)
+        this.currentResultsLength.next(
+          listadoProductosFiancierosDTO.data.length
+        )
       ),
       map((listadoProductosFinancierosDTO) => {
-        return listadoProductosFinancierosDTO.map<ProductoFinanciero>(
+        return listadoProductosFinancierosDTO.data.map<ProductoFinanciero>(
           (productoFinancieroDTO) => {
             const producto = new ProductoFinanciero();
             producto.fromDTO(productoFinancieroDTO);
